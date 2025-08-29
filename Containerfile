@@ -40,4 +40,4 @@ RUN chmod +x /app/entrypoint.sh
 EXPOSE 8188
 
 ENTRYPOINT ["/app/entrypoint.sh"]
-CMD ["python", "main.py"]
+CMD ["python", "main.py", "--listen"]
