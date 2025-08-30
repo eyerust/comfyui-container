@@ -22,8 +22,9 @@ RUN git checkout ${COMFYUI_VERSION}
 RUN pip install -r requirements.txt
 
 # Skeleton and Symlink Setup
+RUN mkdir /app/user
 RUN mkdir -p /opt/data-skeleton /data && \
-    for dir in models input output custom_nodes; do \
+    for dir in models input output custom_nodes user; do \
         mv "/app/${dir}" "/opt/data-skeleton/${dir}" && \
         ln -s "/data/${dir}" "/app/${dir}"; \
     done
