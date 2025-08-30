@@ -30,6 +30,13 @@ RUN git checkout ${COMFYUI_VERSION}
 
 RUN pip install -r requirements.txt
 
+# Common packages
+RUN pip install \
+    opencv-python \
+    moviepy \
+    insightface \
+    onnxruntime-gpu
+
 # Skeleton and Symlink Setup
 RUN mkdir /app/user
 RUN mkdir -p /opt/data-skeleton /data && \
